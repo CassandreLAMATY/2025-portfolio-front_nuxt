@@ -1,0 +1,198 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+.nav-container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 0.5rem 1.5rem;
+  background-color: #443433;
+}
+@media (min-width: 512px) {
+  .nav-container {
+    top: 0.5rem;
+    right: 0.5rem;
+    left: unset;
+    bottom: unset;
+    display: flex;
+    gap: 16px;
+    padding: 0;
+    background-color: unset;
+  }
+}
+.nav-container::before {
+  content: "";
+  position: absolute;
+  top: calc(0px - 0.25rem - 1px);
+  left: 0;
+  right: 0;
+  height: 1px;
+  background-color: #ffcd88;
+}
+@media (min-width: 512px) {
+  .nav-container::before {
+    display: none;
+  }
+}
+.nav-container .nav-toggle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+.nav-container .nav-toggle--compass {
+  font-size: 1.5rem;
+  color: #443433;
+}
+.nav-container .nav-toggle--open {
+  font-size: 0.75rem;
+  color: #99715b;
+  transition: 0.2s ease-out;
+}
+.nav-container .nav-toggle--container {
+  display: none;
+}
+@media (min-width: 512px) {
+  .nav-container .nav-toggle--container {
+    display: block;
+    height: fit-content;
+    padding: 0.25rem;
+    border: 1px solid #443433;
+    background-color: #bbdb9b;
+  }
+}
+.nav-container .nav-content {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0;
+}
+@media (min-width: 512px) {
+  .nav-container .nav-content {
+    flex-direction: column;
+    align-items: end;
+    gap: 0.25rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.1s;
+  }
+}
+.nav-container .nav-content--container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+@media (min-width: 512px) {
+  .nav-container .nav-content--container {
+    flex-direction: column;
+    align-items: end;
+    gap: 0.5rem;
+  }
+}
+.nav-container .nav-content--link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.25rem;
+  width: 3rem;
+  border-radius: 0.25rem;
+  background-color: #5d3e3a;
+  color: #ffcd88;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  transition: 0.1s;
+}
+.nav-container .nav-content--link:hover {
+  background-color: #744841;
+}
+@media (min-width: 512px) {
+  .nav-container .nav-content--link {
+    flex-direction: unset;
+    justify-content: end;
+    gap: 0.75rem;
+    width: 100%;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0;
+    border: 1px solid #443433;
+    background-color: #99715b;
+    font-size: 16px;
+    font-weight: 600;
+  }
+  .nav-container .nav-content--link:hover {
+    background-color: #b6936d;
+  }
+}
+.nav-container .nav-content--link > svg {
+  font-size: 1.5rem;
+  color: #f4e4ba;
+}
+@media (min-width: 512px) {
+  .nav-container .nav-content--link > svg {
+    order: 2;
+    font-size: 16px;
+  }
+}
+.nav-container .nav-content--link > span {
+  font-family: Raleway;
+}
+.nav-container .nav-short {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  cursor: pointer;
+}
+@media (min-width: 512px) {
+  .nav-container .nav-short {
+    flex-direction: unset;
+    gap: 0.75rem;
+  }
+}
+.nav-container .nav-short--link {
+  order: 2;
+  text-decoration: none;
+}
+@media (min-width: 512px) {
+  .nav-container .nav-short--link {
+    order: -1;
+    padding: 0.25rem 0.5rem;
+    border: 1px solid #443433;
+    background-color: #f4e4ba;
+  }
+}
+.nav-container .nav-short > svg {
+  height: 1.5rem;
+  color: #ffcd88;
+}
+@media (min-width: 512px) {
+  .nav-container .nav-short > svg {
+    height: 1.25rem;
+    color: #443433;
+  }
+}
+.nav-container .nav-short > span {
+  order: 2;
+  font-family: Raleway;
+  color: #f4e4ba;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+}
+@media (min-width: 512px) {
+  .nav-container .nav-short > span {
+    color: #443433;
+    font-size: 1.25rem;
+    font-weight: 800;
+  }
+}
+.nav-container.active .nav-content {
+  opacity: 1;
+  pointer-events: all;
+}
+.nav-container.active .nav-toggle--open {
+  transform: rotate(180deg);
+}
+
+/*# sourceMappingURL=navbar.css.map */

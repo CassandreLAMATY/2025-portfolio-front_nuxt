@@ -1,0 +1,128 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+.alert-container {
+  position: fixed;
+  right: 0.5rem;
+  bottom: 0.5rem;
+  left: 0.5rem;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  pointer-events: none;
+}
+@media (min-width: 768px) {
+  .alert-container {
+    left: unset;
+    max-width: 32rem;
+  }
+}
+.alert-box {
+  position: relative;
+  display: flex;
+  gap: 16px;
+  padding: 0.75rem 16px;
+  border: 1px solid #f4e4ba;
+  background-color: #99715b;
+  box-shadow: -2px 4px 8px rgba(68, 52, 51, 0.2392156863);
+  opacity: 0;
+  transform: translateX(calc(100% + 0.5rem));
+  pointer-events: auto;
+}
+.alert-box.danger {
+  border-color: #ff9b9b;
+}
+.alert-box.danger .alert-icon {
+  color: #ff9b9b;
+}
+.alert-box.danger .alert-title {
+  background: linear-gradient(to right, #ffe3e0, #f9f9f9);
+  background-clip: text;
+}
+.alert-box.danger .alert-close {
+  color: #ff9b9b;
+}
+.alert-box.warning {
+  border-color: #ffcd88;
+}
+.alert-box.warning .alert-icon {
+  color: #ffcd88;
+}
+.alert-box.warning .alert-title {
+  background: linear-gradient(to right, #f4e4ba, #f9f9f9);
+  background-clip: text;
+}
+.alert-box.warning .alert-close {
+  color: #ffcd88;
+}
+.alert-box.info {
+  border-color: #93beff;
+}
+.alert-box.info .alert-icon {
+  color: #93beff;
+}
+.alert-box.info .alert-title {
+  background: linear-gradient(to right, #c2ebff, #f9f9f9);
+  background-clip: text;
+}
+.alert-box.info .alert-close {
+  color: #93beff;
+}
+.alert-box.success {
+  border-color: #bbdb9b;
+}
+.alert-box.success .alert-icon {
+  color: #bbdb9b;
+}
+.alert-box.success .alert-title {
+  background: linear-gradient(to right, #eaf3c0, #f9f9f9);
+  background-clip: text;
+}
+.alert-box.success .alert-close {
+  color: #bbdb9b;
+}
+.alert-close {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  font-size: 16px;
+  color: #f4e4ba;
+  cursor: pointer;
+}
+.alert-icon {
+  font-size: 2rem;
+  color: #f4e4ba;
+}
+.alert-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  width: 100%;
+}
+.alert-title {
+  width: fit-content;
+  max-width: calc(100% - 0.75rem);
+  background: linear-gradient(to right, #f4e4ba, #f9f9f9);
+  background-clip: text;
+  font-family: Raleway;
+  font-size: 1.25rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  line-height: 2rem;
+  color: transparent;
+}
+@media (min-width: 1024px) {
+  .alert-title {
+    font-size: 1.5rem;
+  }
+}
+.alert-content {
+  font-family: QuickSand;
+  color: #f9f9f9;
+}
+@media (min-width: 768px) {
+  .alert-content {
+    font-size: 1.25rem;
+  }
+}
+
+/*# sourceMappingURL=alert.css.map */

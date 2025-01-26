@@ -1,0 +1,243 @@
+@import 'variables';
+
+.nav-container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+
+    padding: $grup-02 $grup02;
+
+    background-color: $vanDyke;
+
+    @include media-min(512px) {
+        top: $grup-02;
+        right: $grup-02;
+        left: unset;
+        bottom: unset;
+
+        display: flex;
+        gap: $grup;
+
+        padding: 0;
+
+        background-color: unset;
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: calc(0px - $grup-03 - 1px);
+        left: 0;
+        right: 0;
+
+        height: 1px;
+
+        background-color: $sunset;
+
+        @include media-min(512px) {
+            display: none;
+        }
+    }
+
+    .nav {
+        &-toggle {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            cursor: pointer;
+
+            &--compass {
+                font-size: $grup02;
+                color: $vanDyke;
+            }
+
+            &--open {
+                font-size: $grup-01;
+                color: $chamoisee;
+
+                transition: 0.2s ease-out;
+            }
+
+            &--container {
+                display: none;
+
+                @include media-min(512px) {
+                    display: block;
+
+                    height: fit-content;
+                    padding: $grup-03;
+
+                    border: 1px solid $vanDyke;
+                    background-color: $celadon;
+                }
+            }
+        }
+
+        &-content {
+            display: flex;
+            align-items: center;
+            gap: $grup-02;
+
+            margin: 0;
+            padding: 0;
+
+            @include media-min(512px) {
+                flex-direction: column;
+                align-items: end;
+                gap: $grup-03;
+
+                opacity: 0;
+
+                pointer-events: none;
+
+                transition: 0.1s;
+            }
+
+            &--container {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                @include media-min(512px) {
+                    flex-direction: column;
+                    align-items: end;
+                    gap: $grup-02;
+                }
+            }
+
+            &--link {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: $grup-03;
+
+                padding: $grup-03;
+                width: $grup04;
+
+                border-radius: $grup-03;
+                background-color: $roseEbony;
+
+                color: $sunset;
+                text-decoration: none;
+                text-transform: uppercase;
+                font-size: $grup-01;
+
+                transition: 0.1s;
+
+                &:hover {
+                    background-color: $bole;
+                }
+
+                @include media-min(512px) {
+                    flex-direction: unset;
+                    justify-content: end;
+                    gap: $grup-01;
+
+                    width: 100%;
+                    padding: $grup-03 $grup-02;
+
+                    border-radius: 0;
+                    border: 1px solid $vanDyke;
+                    background-color: $chamoisee;
+
+                    font-size: $grup;
+                    font-weight: 600;
+
+                    &:hover {
+                        background-color: $lion;
+                    }
+                }
+
+                & > svg {
+                    font-size: $grup02;
+                    color: $dutchWhite;
+
+                    @include media-min(512px) {
+                        order: 2;
+
+                        font-size: $grup;
+                    }
+                }
+
+                & > span {
+                    font-family: Raleway;
+                }
+            }
+        }
+
+        &-short {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: $grup-03;
+
+            cursor: pointer;
+
+            @include media-min(512px) {
+                flex-direction: unset;
+                gap: $grup-01;
+            }
+
+            &--link {
+                order: 2;
+
+                text-decoration: none;
+
+                @include media-min(512px) {
+                    order: -1;
+
+                    padding: $grup-03 $grup-02;
+
+                    border: 1px solid $vanDyke;
+                    background-color: $dutchWhite;
+                }
+            }
+
+            & > svg {
+                height: $grup02;
+
+                color: $sunset;
+
+                @include media-min(512px) {
+                    height: $grup01;
+
+                    color: $vanDyke;
+                }
+            }
+
+            & > span {
+                order: 2;
+
+                font-family: Raleway;
+                color: $dutchWhite;
+                text-transform: uppercase;
+                font-size: $grup-01;
+
+                @include media-min(512px) {
+                    color: $vanDyke;
+                    font-size: $grup01;
+                    font-weight: 800;
+                }
+            }
+        }
+    }
+
+    &.active {
+        & .nav {
+            &-content {
+                opacity: 1;
+
+                pointer-events: all;
+            }
+
+            &-toggle {
+                &--open {
+                    transform: rotate(180deg);
+                }
+            }
+        }
+    }
+}

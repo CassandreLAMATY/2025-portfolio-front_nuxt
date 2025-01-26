@@ -1,0 +1,108 @@
+/* HEADER */
+@keyframes sun-glow {
+    0% {
+        fill-opacity: 0.12;
+    }
+    50% {
+        fill-opacity: 0.24;
+    }
+    100% {
+        fill-opacity: 0.12;
+    }
+}
+
+@keyframes sun-spin {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+/* LOGO */
+@keyframes logo-spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    70% {
+        transform: rotate(100deg);
+    }
+    80% {
+        transform: rotate(100deg);
+    }
+    98% {
+        transform: rotate(88deg);
+    }
+    100% {
+        transform: rotate(90deg);
+    }
+}
+
+@keyframes logo-spin_sun {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    70% {
+        transform: translate(-50%, -50%) rotate(100deg);
+    }
+    80% {
+        transform: translate(-50%, -50%) rotate(100deg);
+    }
+    98% {
+        transform: translate(-50%, -50%) rotate(88deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(90deg);
+    }
+}
+
+.logo-animation {
+    transition: transform 0.4s ease-in;
+
+    &:hover {
+        cursor: pointer;
+
+        transform: rotate(90deg);
+
+        transition: transform 0.5s ease-out;
+        animation: logo-spin 0.5s;
+
+        &.sun-logo {
+            transform: translate(-50%, -50%) rotate(90deg);
+            animation: logo-spin_sun 0.5s;
+        }
+
+        & #hyphen {
+            transform: translateX(8px);
+        }
+
+        & #bracket {
+            transform: translateX(14px);
+        }
+
+        & #Bbumps {
+            transform: translateX(-9px);
+        }
+
+        & #Bbar {
+            transform: translateX(-5.5px);
+        }
+    }
+
+    #hyphen,
+    #bracket,
+    #Bbumps,
+    #Bbar {
+        transition: transform 0.4s;
+    }
+
+    @keyframes skillsBanner {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(-50%);
+        }
+    }
+}

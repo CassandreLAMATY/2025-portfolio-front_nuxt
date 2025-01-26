@@ -1,0 +1,349 @@
+@import 'variables';
+
+* {
+    box-sizing: border-box;
+    min-width: 0;
+
+    font-family: Quicksand, Raleway, Helvetica, Arial, sans-serif;
+}
+
+:root {
+    font-size: 16px;
+}
+
+body {
+    position: relative;
+
+    margin: 0;
+
+    overflow-x: hidden;
+
+    ::selection {
+        background: #ffe3e03d;
+    }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+    margin: 0;
+    padding: 0;
+}
+
+p {
+    font-size: $grup;
+    line-height: $grup02;
+
+    @include media-min(768px) {
+        font-size: $grup01;
+        line-height: 1.75rem;
+    }
+}
+
+br {
+    content: ' ';
+    display: block;
+    margin-bottom: $grup;
+
+    &.br-01 {
+        margin-bottom: $grup-01;
+    }
+}
+
+button {
+    border: none;
+    background: none;
+
+    padding: 0;
+}
+
+.btn {
+    position: relative;
+
+    max-width: $grup08;
+    max-height: 100%;
+
+    &:hover {
+        cursor: pointer;
+
+        &.btn_primary {
+            & > .btn-content {
+                background-color: #ba8c69;
+                border: 1px solid $dutchWhite;
+            }
+        }
+
+        &.btn_secondary {
+            & > .btn-content {
+                background-color: #f8eed9;
+                border: 1px solid $celadon;
+            }
+        }
+
+        &.btn_tertiary {
+            & > .btn-content {
+                background-color: #ceb4ff;
+            }
+        }
+    }
+
+    &-shadow {
+        position: absolute;
+        z-index: 1;
+
+        width: 100%;
+        height: 100%;
+        top: $grup-02;
+        right: $grup-02;
+
+        border: 1px solid $dutchWhite;
+
+        pointer-events: none;
+    }
+
+    &-content {
+        position: relative;
+        z-index: 2;
+
+        display: flex;
+        align-items: center;
+        gap: $grup-01;
+
+        width: 100%;
+        height: 100%;
+        padding: calc($grup-01 - 2px) calc($grup - 2px);
+
+        transition: 0.2s ease-out;
+    }
+
+    &-icon {
+        font-size: $grup01;
+        color: $seasalt;
+
+        @include media-min(768px) {
+            font-size: $grup02;
+        }
+
+        @include media-min(1536px) {
+            font-size: $grup03;
+        }
+    }
+
+    &-title {
+        font-family: Raleway;
+        font-size: $grup;
+        font-weight: 600;
+        color: $seasalt;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+
+        @include media-min(768px) {
+            font-size: $grup01;
+        }
+    }
+
+    &_dutchWhite {
+        & .btn-icon {
+            color: $dutchWhite;
+        }
+    }
+
+    &_mistyRose {
+        & .btn-icon {
+            color: $mistyRose;
+        }
+    }
+
+    &_primary .btn-content {
+        border: 1px solid $chamoisee;
+        background-color: $chamoisee;
+    }
+
+    &_secondary {
+        & .btn-content {
+            border: 1px solid $dutchWhite;
+            background-color: $dutchWhite;
+
+            & .btn-icon,
+            & .btn-title {
+                color: $vanDyke;
+            }
+        }
+
+        & .btn-shadow {
+            right: -$grup-02;
+
+            border-color: $celadon;
+        }
+    }
+
+    &_tertiary {
+        width: fit-content;
+        height: fit-content;
+
+        & .btn-content {
+            border: 1px solid $vanDyke;
+            background-color: $mauve;
+
+            & .btn-icon,
+            & .btn-title {
+                text-transform: capitalize;
+                font-size: $grup-01;
+                color: $vanDyke;
+
+                @include media-min(512px) {
+                    font-size: $grup;
+                }
+
+                @include media-min(1024px) {
+                    font-size: $grup01;
+                }
+            }
+        }
+
+        & .btn-shadow {
+            left: -$grup-02;
+
+            border-color: $vanDyke;
+        }
+    }
+
+    &-link {
+        display: block;
+        flex: 1;
+
+        & > .btn {
+            cursor: pointer;
+        }
+    }
+}
+
+.parenthesis {
+    font-size: $grup-01;
+
+    @include media-min(1024px) {
+        font-size: $grup;
+    }
+}
+
+.link {
+    color: $uranianBlue;
+    text-underline-offset: 2px;
+}
+
+.bold {
+    font-weight: 600;
+}
+
+.btn {
+    &-round {
+        width: $grup03;
+        height: $grup03;
+
+        border: 1px solid $vanDyke;
+        border-radius: 50%;
+        background-color: $dutchWhite;
+
+        font-size: $grup;
+        color: $vanDyke;
+
+        @include media-min(512px) {
+            width: calc($grup03 + $grup-03);
+            height: calc($grup03 + $grup-03);
+
+            font-size: $grup01;
+        }
+
+        @include media-min(1024px) {
+            width: calc($grup03 + $grup-03);
+            height: calc($grup03 + $grup-03);
+
+            font-size: $grup01;
+        }
+
+        &--link {
+            height: fit-content;
+            &:hover {
+                cursor: pointer;
+            }
+
+            & > *:hover {
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+.tag {
+    display: flex;
+    align-items: center;
+    gap: $grup-03;
+
+    min-width: unset;
+    height: $grup02;
+    padding: 0 $grup-02;
+
+    border-radius: 50px;
+    border: 1px solid $vanDyke;
+
+    font-size: $grup-01;
+    font-weight: 600;
+
+    &:nth-child(n + 5) {
+        display: none;
+    }
+
+    @include media-min(512px) {
+        gap: $grup-02;
+
+        height: calc($grup02 + $grup-03);
+        padding: 0 calc($grup-02 + $grup-04);
+
+        font-size: $grup;
+    }
+
+    @include media-min(768px) {
+        &:nth-child(n) {
+            display: flex;
+        }
+
+        &:nth-child(n + 8) {
+            display: none;
+        }
+    }
+
+    @include media-min(1024px) {
+        height: calc($grup02 + $grup-02);
+    }
+
+    @include media-min(1024px) {
+        height: calc($grup02 + $grup-02);
+    }
+
+    &-icon {
+        height: $grup;
+    }
+
+    &.jordyBlue {
+        background-color: $jordyBlue;
+    }
+
+    &.mauve {
+        background-color: $mauve;
+    }
+
+    &.celadon {
+        background-color: $celadon;
+    }
+
+    &.sunset {
+        background-color: $sunset;
+    }
+
+    &.salmonPink {
+        background-color: $salmonPink;
+    }
+}

@@ -1,0 +1,182 @@
+@import 'variables';
+
+.footer {
+    background-color: $raisinBlack;
+
+    &-container {
+        display: flex;
+        flex-direction: column;
+        gap: $grup04;
+
+        padding: $grup03 $grup02 $grup02 $grup02;
+
+        @include media-min(768px) {
+            padding: $grup05 $grup05 $grup02 $grup05;
+        }
+
+        @include media-min(1024px) {
+            padding: $grup05 $grup07 $grup03 $grup07;
+        }
+
+        @include media-min(1536px) {
+            box-sizing: content-box;
+
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: $grup05 $grup08 $grup03 $grup08;
+        }
+
+        & .footer-about--container {
+            display: flex;
+            flex-direction: column;
+            gap: $grup04;
+
+            @include media-min(768px) {
+                flex-direction: row;
+                justify-content: space-between;
+                gap: $grup04;
+            }
+
+            & .footer-about {
+                display: flex;
+                flex-direction: column;
+                gap: $grup-01;
+
+                @include media-min(1024px) {
+                    gap: $grup02;
+                }
+            }
+
+            & .about {
+                color: $seasalt;
+
+                @include media-min(1024px) {
+                    font-size: $grup01;
+                }
+
+                & > a {
+                    color: $jordyBlue;
+                    font-weight: 600;
+                    font-style: italic;
+                }
+
+                & br {
+                    margin-bottom: $grup-03;
+                }
+            }
+
+            & .footer-media--container {
+                display: flex;
+                gap: $grup02;
+
+                & .footer-media {
+                    text-decoration: none;
+
+                    &--btn {
+                        display: flex;
+                        align-items: center;
+                        gap: $grup-02;
+
+                        font-size: $grup;
+                        font-weight: 500;
+                        color: $mistyRose;
+
+                        cursor: pointer;
+
+                        @include media-min(1024px) {
+                            font-size: $grup01;
+                        }
+                    }
+
+                    &--icon {
+                        font-size: $grup03;
+                        color: $seasalt;
+                    }
+                }
+            }
+        }
+    }
+
+    &-nav {
+        order: -1;
+
+        @include media-min(768px) {
+            order: 1;
+        }
+
+        & > ul {
+            display: flex;
+            align-items: start;
+            gap: $grup02;
+
+            margin: 0;
+            padding: 0;
+
+            list-style: none;
+        }
+
+        &--link {
+            font-family: Raleway;
+            font-size: $grup01;
+            font-weight: 400;
+            color: $seasalt;
+            text-transform: uppercase;
+            text-decoration: none;
+
+            @include media-min(1024px) {
+                font-size: $grup02;
+            }
+        }
+    }
+
+    &-credits {
+        color: $seasalt;
+
+        @include media-min(1536px) {
+            font-size: $grup01;
+        }
+
+        &--container {
+            display: flex;
+            flex-direction: column;
+            gap: $grup02;
+
+            @include media-min(768px) {
+                flex-direction: row;
+                align-items: end;
+                justify-content: space-between;
+                gap: $grup04;
+            }
+        }
+
+        &--hr {
+            margin: $grup-02 0;
+
+            border: none;
+            border-top: 1px solid $vanDyke;
+        }
+
+        &--version {
+            color: $mistyRose;
+            letter-spacing: 0.5px;
+
+            & .version {
+                font-weight: 800;
+                color: $seasalt;
+            }
+
+            & .date {
+                color: $seasalt;
+            }
+        }
+    }
+
+    &-rights {
+        text-align: right;
+        color: $dutchWhite;
+
+        @include media-min(1536px) {
+            font-size: $grup01;
+        }
+    }
+}
