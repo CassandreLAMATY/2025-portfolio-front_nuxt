@@ -1,0 +1,594 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+.bento-container {
+  background: url("@/assets/images/svg/Curves01_2.svg") 70% 0, linear-gradient(to bottom, #75574d, #99715b);
+  overflow: hidden;
+}
+@media (min-width: 1024px) {
+  .bento-container {
+    background: url("@/assets/images/svg/Curves01_2.svg") 70% -50%, linear-gradient(to bottom, #75574d, #99715b);
+  }
+}
+@media (min-width: 1280px) {
+  .bento-container {
+    background: url("@/assets/images/svg/Curves01_2.svg") 70% 0%, linear-gradient(to bottom, #75574d, #99715b);
+  }
+}
+@media (min-width: 1536px) {
+  .bento-container {
+    background: url("@/assets/images/svg/Curves01_2.svg") 70% -30%, linear-gradient(to bottom, #75574d, #99715b);
+  }
+}
+@media (min-width: 3840px) {
+  .bento-container {
+    background-size: cover;
+  }
+}
+.bento-container > div {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem 1.5rem;
+}
+@media (min-width: 768px) {
+  .bento-container > div {
+    gap: 4rem;
+    padding: 4rem;
+  }
+}
+@media (min-width: 1024px) {
+  .bento-container > div {
+    padding: 4rem 8rem;
+  }
+}
+@media (min-width: 1536px) {
+  .bento-container > div {
+    box-sizing: content-box;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 6rem 16rem;
+  }
+}
+.bento-container .welcome {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+.bento-container .welcome-overline, .bento-container .welcome-title {
+  width: fit-content;
+  font-family: Raleway;
+  text-transform: uppercase;
+}
+.bento-container .welcome-overline {
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: #f9f9f9;
+}
+@media (min-width: 768px) {
+  .bento-container .welcome-overline {
+    font-size: 16px;
+  }
+}
+@media (min-width: 1024px) {
+  .bento-container .welcome-overline {
+    font-size: 1.25rem;
+  }
+}
+.bento-container .welcome-title--container {
+  position: relative;
+}
+.bento-container .welcome-title--container #spark01, .bento-container .welcome-title--container #spark02, .bento-container .welcome-title--container #spark03 {
+  position: absolute;
+  color: #f9f9f9;
+}
+.bento-container .welcome-title--container #spark01 {
+  top: 0.75rem;
+  right: -2rem;
+  font-size: 1.25rem;
+  color: #f4e4ba;
+}
+@media (min-width: 512px) {
+  .bento-container .welcome-title--container #spark01 {
+    font-size: 1.5rem;
+  }
+}
+@media (min-width: 1024px) {
+  .bento-container .welcome-title--container #spark01 {
+    top: 16px;
+    right: -4rem;
+    font-size: 3rem;
+  }
+}
+@media (min-width: 1536px) {
+  .bento-container .welcome-title--container #spark01 {
+    top: 1.5rem;
+  }
+}
+.bento-container .welcome-title--container #spark02 {
+  bottom: -0.75rem;
+  right: 0.5rem;
+  font-size: 16px;
+  color: #bbdb9b;
+}
+@media (min-width: 512px) {
+  .bento-container .welcome-title--container #spark02 {
+    right: 0.25rem;
+    font-size: 1.25rem;
+  }
+}
+@media (min-width: 1024px) {
+  .bento-container .welcome-title--container #spark02 {
+    right: -16px;
+    font-size: 2rem;
+  }
+}
+@media (min-width: 1536px) {
+  .bento-container .welcome-title--container #spark02 {
+    right: -16px;
+    bottom: 0;
+  }
+}
+.bento-container .welcome-title--container #spark03 {
+  top: -0.5rem;
+  right: -0.25rem;
+  font-size: 0.75rem;
+  color: #ffe3e0;
+}
+@media (min-width: 512px) {
+  .bento-container .welcome-title--container #spark03 {
+    font-size: 16px;
+  }
+}
+@media (min-width: 1024px) {
+  .bento-container .welcome-title--container #spark03 {
+    right: -16px;
+    font-size: 1.5rem;
+  }
+}
+@media (min-width: 1536px) {
+  .bento-container .welcome-title--container #spark03 {
+    right: 0;
+  }
+}
+.bento-container .welcome-title {
+  font-size: 3rem;
+  font-weight: 900;
+  color: transparent;
+  transition: color 0.024s ease-in-out;
+}
+@media (min-width: 512px) {
+  .bento-container .welcome-title {
+    font-size: 4rem;
+  }
+}
+@media (min-width: 1024px) {
+  .bento-container .welcome-title {
+    font-size: 6rem;
+  }
+}
+@media (min-width: 1536px) {
+  .bento-container .welcome-title {
+    font-size: 8rem;
+  }
+}
+.bento-container .welcome-title:hover {
+  cursor: default;
+}
+.bento-container .welcome-title--letter {
+  display: inline-block;
+  -webkit-text-stroke: 0.5px #f9f9f9;
+}
+.bento-container .welcome-dots {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.bento-container .welcome-dots .dot {
+  width: 0.25rem;
+  height: 0.25rem;
+  background-color: #f9f9f9;
+  border-radius: 50%;
+}
+.bento-container .bento {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+@media (min-width: 768px) {
+  .bento-container .bento {
+    gap: 2rem;
+  }
+}
+.bento-container .bento-circle {
+  position: absolute;
+  bottom: 3rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 32rem;
+  aspect-ratio: 1/1;
+  border: 1px solid #f9f9f9;
+  border-radius: 50%;
+}
+@media (min-width: 584px) {
+  .bento-container .bento-circle {
+    bottom: calc(50% - 2rem);
+    transform: translate(-50%, 50%);
+  }
+}
+@media (min-width: 1024px) {
+  .bento-container .bento-circle {
+    right: 0;
+    bottom: calc(50% - 1.5rem);
+    left: unset;
+    transform: translate(50%, 50%);
+    width: 64rem;
+  }
+}
+@media (min-width: 1280px) {
+  .bento-container .bento-circle {
+    transform: translate(40%, 50%);
+    width: 40rem;
+  }
+}
+@media (min-width: 1536px) {
+  .bento-container .bento-circle {
+    width: 48rem;
+  }
+}
+.bento-container .bento-heading {
+  position: relative;
+  background: linear-gradient(to right, #f4e4ba, #f9f9f9);
+  background-clip: text;
+  font-family: Raleway;
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 2rem;
+  text-transform: uppercase;
+  text-decoration: underline;
+  text-decoration-color: #f9f9f9;
+  text-decoration-thickness: 0.5px;
+  text-underline-offset: 0.25rem;
+  text-wrap: pretty;
+  color: transparent;
+}
+@media (min-width: 768px) {
+  .bento-container .bento-heading {
+    text-underline-offset: 0.5rem;
+  }
+}
+@media (min-width: 1024px) {
+  .bento-container .bento-heading {
+    font-size: 1.5rem;
+  }
+}
+.bento-container .bento-heading::before {
+  position: absolute;
+  top: 26.7px;
+  left: -1.5rem;
+  display: block;
+  content: " ";
+  width: 1.5rem;
+  height: 0.5px;
+  background-color: #f9f9f9;
+}
+@media (min-width: 512px) {
+  .bento-container .bento-heading::before {
+    top: 27px;
+  }
+}
+@media (min-width: 768px) {
+  .bento-container .bento-heading::before {
+    top: 31px;
+    left: -4rem;
+    width: 4rem;
+  }
+}
+@media (min-width: 1024px) {
+  .bento-container .bento-heading::before {
+    top: 32px;
+    left: -8rem;
+    width: 8rem;
+  }
+}
+@media (min-width: 1536px) {
+  .bento-container .bento-heading::before {
+    left: -3360px;
+    width: 3360px;
+  }
+}
+.bento-container .bento-grid {
+  display: grid;
+  grid-template-rows: repeat(4, 1fr);
+  grid-template-areas: "artworks" "design" "audiovisual" "dev";
+  gap: 1.5rem;
+}
+@media (min-width: 584px) {
+  .bento-container .bento-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas: "artworks design" "audiovisual dev";
+    gap: 16px;
+  }
+}
+@media (min-width: 768px) {
+  .bento-container .bento-grid {
+    gap: 1.5rem;
+  }
+}
+@media (min-width: 1280px) {
+  .bento-container .bento-grid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas: "artworks artworks audiovisual" "design   dev         dev";
+  }
+}
+.bento-container .bento-grid .bento-card {
+  position: relative;
+  padding: 0.75rem 16px;
+  aspect-ratio: 3/2;
+  border-radius: 16px;
+  box-shadow: -2px 4px 8px rgba(68, 52, 51, 0.2392156863);
+  transition: transform 0.2s ease-out;
+}
+.bento-container .bento-grid .bento-card:hover {
+  transform: scale(1.02);
+  cursor: pointer;
+}
+@media (min-width: 584px) {
+  .bento-container .bento-grid .bento-card {
+    height: 16rem;
+    aspect-ratio: unset;
+  }
+}
+@media (min-width: 896px) {
+  .bento-container .bento-grid .bento-card {
+    padding: 16px 1.5rem;
+  }
+}
+.bento-container .bento-grid .bento-card.disabled {
+  filter: grayscale(1);
+  cursor: not-allowed;
+}
+.bento-container .bento-grid .bento-card.disabled:hover {
+  transform: scale(1);
+}
+.bento-container .bento-grid .bento-card.disabled::after {
+  content: " ";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  border-radius: 16px;
+  backdrop-filter: blur(1px);
+}
+.bento-container .bento-grid #artworks {
+  grid-area: artworks;
+}
+.bento-container .bento-grid #artworks .bento-card {
+  background: linear-gradient(to bottom, #b3a7ff, #f4e4ba);
+}
+.bento-container .bento-grid #artworks .bento-card--bg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: url("@/assets/images/ArtworkMascot.png");
+  background-repeat: no-repeat;
+  background-size: 70%;
+  background-position: 130% -50%;
+  border-radius: 16px;
+}
+@media (min-width: 1280px) {
+  .bento-container .bento-grid #artworks .bento-card--bg {
+    background-size: 360px;
+    background-position: 100% -10%;
+  }
+}
+.bento-container .bento-grid #artworks .bento-title--container {
+  top: 0.75rem;
+  left: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+}
+@media (min-width: 896px) {
+  .bento-container .bento-grid #artworks .bento-title--container {
+    top: 16px;
+    left: 1.5rem;
+  }
+}
+.bento-container .bento-grid #artworks .bento-title--container > h2 {
+  color: #f9f9f9;
+}
+.bento-container .bento-grid #artworks .bento-title--container > h2 > span {
+  padding: 0.5rem 0;
+}
+.bento-container .bento-grid #artworks .bento-title--container > .bento-subtitles--container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+}
+.bento-container .bento-grid #artworks .bento-title--container > .bento-subtitles--container > h3 {
+  font-family: Raleway;
+  font-size: 16px;
+  font-weight: 800;
+  font-style: italic;
+  text-transform: uppercase;
+  color: #443433;
+}
+.bento-container .bento-grid #audiovisual {
+  grid-area: audiovisual;
+  background-image: url("@/assets/images/SkyBG01.jpg");
+  background-position: center 70%;
+}
+.bento-container .bento-grid #audiovisual .bento-title--container {
+  left: 16px;
+  bottom: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+}
+@media (min-width: 896px) {
+  .bento-container .bento-grid #audiovisual .bento-title--container {
+    left: 1.5rem;
+    bottom: 16px;
+  }
+}
+.bento-container .bento-grid #audiovisual .bento-title--container > h2 {
+  color: #f9f9f9;
+}
+.bento-container .bento-grid #audiovisual .bento-title--container > h2 > span {
+  padding: 0.5rem 0;
+}
+.bento-container .bento-grid #audiovisual .bento-title--container > .bento-subtitles--container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+}
+.bento-container .bento-grid #audiovisual .bento-title--container > .bento-subtitles--container > h3 {
+  width: fit-content;
+  font-family: Raleway;
+  font-size: 16px;
+  font-weight: 800;
+  font-style: italic;
+  color: #443433;
+  text-transform: uppercase;
+}
+.bento-container .bento-grid #design {
+  grid-area: design;
+  background: #bbdb9b;
+  border: 1px solid #f4e4ba;
+}
+.bento-container .bento-grid #design .bento-card--bg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: url("@/assets/images/svg/SimplestStars02_medium.svg");
+  background-position: 0.5rem 0.75rem;
+  mask-image: linear-gradient(to left, rgba(0, 0, 0, 0) 0%, black 100%);
+  border-radius: 16px;
+}
+.bento-container .bento-grid #design .bento-title--container {
+  top: 0.75rem;
+  right: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.125rem;
+}
+@media (min-width: 896px) {
+  .bento-container .bento-grid #design .bento-title--container {
+    top: 16px;
+    left: 1.5rem;
+  }
+}
+.bento-container .bento-grid #design .bento-title--container > h2 {
+  text-align: right;
+  color: #f9f9f9;
+}
+.bento-container .bento-grid #design .bento-title--container > h2 > br {
+  margin: 0;
+}
+.bento-container .bento-grid #design .bento-title--container > h2 > span {
+  padding: 0.5rem 0;
+}
+.bento-container .bento-grid #design .bento-title--container > .bento-subtitles--container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+}
+.bento-container .bento-grid #design .bento-title--container > .bento-subtitles--container > h3 {
+  font-family: Raleway;
+  font-size: 16px;
+  font-weight: 800;
+  font-style: italic;
+  text-transform: uppercase;
+  color: #443433;
+}
+.bento-container .bento-grid #dev {
+  grid-area: dev;
+}
+.bento-container .bento-grid #dev .bento-card--bg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: 16px;
+  background-color: #f4e4ba;
+  overflow: hidden;
+}
+.bento-container .bento-grid #dev .bento-card--bg > p {
+  width: 200%;
+  font-family: Raleway;
+  font-size: 2rem;
+  font-weight: 200;
+  line-height: 3rem;
+  color: #f9f9f9;
+  transform: translateY(-35%) rotate(-24deg);
+}
+@media (min-width: 584px) {
+  .bento-container .bento-grid #dev .bento-card--bg > p {
+    width: 300%;
+    transform: translate(-20%, -35%) rotate(-24deg);
+  }
+}
+@media (min-width: 1024px) {
+  .bento-container .bento-grid #dev .bento-card--bg > p {
+    font-size: 2rem;
+    line-height: 4rem;
+    letter-spacing: 1px;
+  }
+}
+.bento-container .bento-grid #dev .bento-title--container {
+  right: 16px;
+  bottom: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+}
+@media (min-width: 896px) {
+  .bento-container .bento-grid #dev .bento-title--container {
+    right: 1.5rem;
+    bottom: 16px;
+  }
+}
+.bento-container .bento-grid #dev .bento-title--container > h2 {
+  color: #99715b;
+}
+.bento-container .bento-grid #dev .bento-title--container > h2 > span {
+  padding: 0.5rem 0;
+}
+.bento-container .bento-grid #dev .bento-title--container > .bento-subtitles--container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.125rem;
+}
+.bento-container .bento-grid #dev .bento-title--container > .bento-subtitles--container > h3 {
+  width: fit-content;
+  font-family: Raleway;
+  font-size: 16px;
+  font-weight: 800;
+  font-style: italic;
+  color: #443433;
+  text-transform: uppercase;
+}
+.bento-container .bento-grid .bento-title--container {
+  position: absolute;
+  z-index: 2;
+}
+.bento-container .bento-grid .bento-title--container > h2, .bento-container .bento-grid .bento-title--container h2 > span {
+  font-family: Raleway;
+  font-size: 1.5rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+/*# sourceMappingURL=bento.css.map */

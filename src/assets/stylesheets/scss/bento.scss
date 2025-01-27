@@ -1,0 +1,675 @@
+@import 'variables';
+
+.bento-container {
+    background:
+        url('@/assets/images/svg/Curves01_2.svg') 70% 0,
+        linear-gradient(to bottom, #75574d, $chamoisee);
+
+    overflow: hidden;
+
+    @include media-min(1024px) {
+        background:
+            url('@/assets/images/svg/Curves01_2.svg') 70% -50%,
+            linear-gradient(to bottom, #75574d, $chamoisee);
+    }
+
+    @include media-min(1280px) {
+        background:
+            url('@/assets/images/svg/Curves01_2.svg') 70% 0%,
+            linear-gradient(to bottom, #75574d, $chamoisee);
+    }
+
+    @include media-min(1536px) {
+        background:
+            url('@/assets/images/svg/Curves01_2.svg') 70% -30%,
+            linear-gradient(to bottom, #75574d, $chamoisee);
+    }
+
+    @include media-min(3840px) {
+        background-size: cover;
+    }
+
+    & > div {
+        display: flex;
+        flex-direction: column;
+        gap: $grup03;
+
+        padding: $grup03 $grup02;
+
+        @include media-min(768px) {
+            gap: $grup05;
+
+            padding: $grup05;
+        }
+
+        @include media-min(1024px) {
+            padding: $grup05 $grup07;
+        }
+
+        @include media-min(1536px) {
+            box-sizing: content-box;
+
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: $grup06 $grup08;
+        }
+    }
+
+    .welcome {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: $grup;
+
+        &-overline,
+        &-title {
+            width: fit-content;
+
+            font-family: Raleway;
+            text-transform: uppercase;
+        }
+
+        &-overline {
+            font-size: $grup-01;
+            font-weight: 400;
+            color: $seasalt;
+
+            @include media-min(768px) {
+                font-size: $grup;
+            }
+
+            @include media-min(1024px) {
+                font-size: $grup01;
+            }
+        }
+
+        &-title--container {
+            position: relative;
+
+            & #spark01,
+            & #spark02,
+            & #spark03 {
+                position: absolute;
+                color: $seasalt;
+            }
+
+            & #spark01 {
+                top: $grup-01;
+                right: -$grup03;
+
+                font-size: $grup01;
+                color: $dutchWhite;
+
+                @include media-min(512px) {
+                    font-size: $grup02;
+                }
+
+                @include media-min(1024px) {
+                    top: $grup;
+                    right: -$grup05;
+
+                    font-size: $grup04;
+                }
+
+                @include media-min(1536px) {
+                    top: $grup02;
+                }
+            }
+
+            & #spark02 {
+                bottom: -$grup-01;
+                right: $grup-02;
+
+                font-size: $grup;
+                color: $celadon;
+
+                @include media-min(512px) {
+                    right: $grup-03;
+
+                    font-size: $grup01;
+                }
+
+                @include media-min(1024px) {
+                    right: -$grup;
+
+                    font-size: $grup03;
+                }
+
+                @include media-min(1536px) {
+                    right: -$grup;
+                    bottom: 0;
+                }
+            }
+
+            & #spark03 {
+                top: -$grup-02;
+                right: -$grup-03;
+
+                font-size: $grup-01;
+                color: $mistyRose;
+
+                @include media-min(512px) {
+                    font-size: $grup;
+                }
+
+                @include media-min(1024px) {
+                    right: -$grup;
+
+                    font-size: $grup02;
+                }
+
+                @include media-min(1536px) {
+                    right: 0;
+                }
+            }
+        }
+
+        &-title {
+            font-size: $grup04;
+            font-weight: 900;
+            color: transparent;
+
+            transition: color 0.024s ease-in-out;
+
+            @include media-min(512px) {
+                font-size: $grup05;
+            }
+
+            @include media-min(1024px) {
+                font-size: $grup06;
+            }
+
+            @include media-min(1536px) {
+                font-size: $grup07;
+            }
+
+            &:hover {
+                cursor: default;
+            }
+
+            &--letter {
+                display: inline-block;
+
+                -webkit-text-stroke: 0.5px $seasalt;
+            }
+        }
+
+        &-dots {
+            display: flex;
+            flex-direction: column;
+            gap: $grup;
+
+            & .dot {
+                width: $grup-03;
+                height: $grup-03;
+
+                background-color: $seasalt;
+                border-radius: 50%;
+            }
+        }
+    }
+
+    .bento {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        gap: $grup02;
+
+        @include media-min(768px) {
+            gap: $grup03;
+        }
+
+        &-circle {
+            position: absolute;
+            bottom: $grup04;
+            left: 50%;
+            transform: translateX(-50%);
+
+            width: $grup09;
+            aspect-ratio: 1 / 1;
+
+            border: 1px solid $seasalt;
+            border-radius: 50%;
+
+            @include media-min(584px) {
+                bottom: calc(50% - $grup03);
+                transform: translate(-50%, 50%);
+            }
+
+            @include media-min(1024px) {
+                right: 0;
+                bottom: calc(50% - $grup02);
+                left: unset;
+                transform: translate(50%, 50%);
+
+                width: $grup10;
+            }
+
+            @include media-min(1280px) {
+                transform: translate(40%, 50%);
+
+                width: calc($grup09 + $grup07);
+            }
+
+            @include media-min(1536px) {
+                width: calc($grup09 + $grup08);
+            }
+        }
+
+        &-heading {
+            position: relative;
+
+            background: linear-gradient(to right, $dutchWhite, $seasalt);
+            background-clip: text;
+
+            font-family: Raleway;
+            font-size: $grup01;
+            font-weight: 400;
+            line-height: $grup03;
+            text-transform: uppercase;
+            text-decoration: underline;
+            text-decoration-color: $seasalt;
+            text-decoration-thickness: 0.5px;
+            text-underline-offset: $grup-03;
+            text-wrap: pretty;
+            color: transparent;
+
+            @include media-min(768px) {
+                text-underline-offset: $grup-02;
+            }
+
+            @include media-min(1024px) {
+                font-size: $grup02;
+            }
+
+            &::before {
+                position: absolute;
+                top: 26.7px;
+                left: -$grup02;
+
+                display: block;
+
+                content: ' ';
+
+                width: $grup02;
+                height: 0.5px;
+
+                background-color: $seasalt;
+
+                @include media-min(512px) {
+                    top: 27px;
+                }
+
+                @include media-min(768px) {
+                    top: 31px;
+                    left: -$grup05;
+
+                    width: $grup05;
+                }
+
+                @include media-min(1024px) {
+                    top: 32px;
+                    left: -$grup07;
+
+                    width: $grup07;
+                }
+
+                @include media-min(1536px) {
+                    left: -3360px;
+
+                    width: 3360px;
+                }
+            }
+        }
+
+        &-grid {
+            display: grid;
+            grid-template-rows: repeat(4, 1fr);
+            grid-template-areas:
+                'artworks'
+                'design'
+                'audiovisual'
+                'dev';
+            gap: $grup02;
+
+            @include media-min(584px) {
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: repeat(2, 1fr);
+                grid-template-areas:
+                    'artworks design'
+                    'audiovisual dev';
+                gap: $grup;
+            }
+
+            @include media-min(768px) {
+                gap: $grup02;
+            }
+
+            @include media-min(1280px) {
+                grid-template-columns: repeat(3, 1fr);
+                grid-template-rows: repeat(2, 1fr);
+                grid-template-areas:
+                    'artworks artworks audiovisual'
+                    'design   dev         dev';
+            }
+
+            & .bento-card {
+                position: relative;
+
+                padding: $grup-01 $grup;
+                aspect-ratio: 3 / 2;
+
+                border-radius: $grup;
+                box-shadow: -2px 4px 8px #4434333d;
+
+                transition: transform 0.2s ease-out;
+
+                &:hover {
+                    transform: scale(1.02);
+
+                    cursor: pointer;
+                }
+
+                @include media-min(584px) {
+                    height: $grup08;
+                    aspect-ratio: unset;
+                }
+
+                @include media-min(896px) {
+                    padding: $grup $grup02;
+                }
+
+                &.disabled {
+                    filter: grayscale(1);
+                    cursor: not-allowed;
+
+                    &:hover {
+                        transform: scale(1);
+                    }
+
+                    &::after {
+                        content: ' ';
+
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        right: 0;
+                        bottom: 0;
+                        z-index: 2;
+
+                        border-radius: $grup;
+                        backdrop-filter: blur(1px);
+                    }
+                }
+            }
+
+            & #artworks {
+                grid-area: artworks;
+
+                & .bento-card {
+                    background: linear-gradient(to bottom, $mauve, $dutchWhite);
+                }
+
+                & .bento-card--bg {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    left: 0;
+
+                    background: url('@/assets/images/ArtworkMascot.png');
+                    background-repeat: no-repeat;
+                    background-size: 70%;
+                    background-position: 130% -50%;
+                    border-radius: $grup;
+
+                    @include media-min(1280px) {
+                        background-size: 360px;
+                        background-position: 100% -10%;
+                    }
+                }
+
+                & .bento-title--container {
+                    top: $grup-01;
+                    left: $grup;
+
+                    display: flex;
+                    flex-direction: column;
+                    gap: $grup-04;
+
+                    @include media-min(896px) {
+                        top: $grup;
+                        left: $grup02;
+                    }
+
+                    & > h2 {
+                        color: $seasalt;
+
+                        & > span {
+                            padding: $grup-02 0;
+                        }
+                    }
+
+                    & > .bento-subtitles--container {
+                        display: flex;
+                        flex-direction: column;
+                        gap: $grup-04;
+
+                        & > h3 {
+                            font-family: Raleway;
+                            font-size: $grup;
+                            font-weight: 800;
+                            font-style: italic;
+                            text-transform: uppercase;
+                            color: $vanDyke;
+                        }
+                    }
+                }
+            }
+
+            & #audiovisual {
+                grid-area: audiovisual;
+
+                background-image: url('@/assets/images/SkyBG01.jpg');
+                background-position: center 70%;
+
+                & .bento-title--container {
+                    left: $grup;
+                    bottom: $grup-01;
+
+                    display: flex;
+                    flex-direction: column;
+                    gap: $grup-04;
+
+                    @include media-min(896px) {
+                        left: $grup02;
+                        bottom: $grup;
+                    }
+
+                    & > h2 {
+                        color: $seasalt;
+
+                        & > span {
+                            padding: $grup-02 0;
+                        }
+                    }
+
+                    & > .bento-subtitles--container {
+                        display: flex;
+                        flex-direction: column;
+                        gap: $grup-04;
+
+                        & > h3 {
+                            width: fit-content;
+
+                            font-family: Raleway;
+                            font-size: $grup;
+                            font-weight: 800;
+                            font-style: italic;
+                            color: $vanDyke;
+                            text-transform: uppercase;
+                        }
+                    }
+                }
+            }
+
+            & #design {
+                grid-area: design;
+
+                background: $celadon;
+                border: 1px solid $dutchWhite;
+
+                & .bento-card--bg {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    left: 0;
+
+                    background: url('@/assets/images/svg/SimplestStars02_medium.svg');
+                    background-position: $grup-02 $grup-01;
+                    mask-image: linear-gradient(to left, rgba(0, 0, 0, 0) 0%, black 100%);
+                    border-radius: $grup;
+                }
+
+                & .bento-title--container {
+                    top: $grup-01;
+                    right: $grup;
+
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-end;
+                    gap: $grup-04;
+
+                    @include media-min(896px) {
+                        top: $grup;
+                        left: $grup02;
+                    }
+
+                    & > h2 {
+                        text-align: right;
+                        color: $seasalt;
+
+                        & > br {
+                            margin: 0;
+                        }
+
+                        & > span {
+                            padding: $grup-02 0;
+                        }
+                    }
+
+                    & > .bento-subtitles--container {
+                        display: flex;
+                        flex-direction: column;
+                        gap: $grup-04;
+
+                        & > h3 {
+                            font-family: Raleway;
+                            font-size: $grup;
+                            font-weight: 800;
+                            font-style: italic;
+                            text-transform: uppercase;
+                            color: $vanDyke;
+                        }
+                    }
+                }
+            }
+
+            & #dev {
+                grid-area: dev;
+
+                & .bento-card--bg {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    left: 0;
+
+                    border-radius: $grup;
+
+                    background-color: $dutchWhite;
+
+                    overflow: hidden;
+
+                    & > p {
+                        width: 200%;
+
+                        font-family: Raleway;
+                        font-size: $grup03;
+                        font-weight: 200;
+                        line-height: $grup04;
+                        color: $seasalt;
+
+                        transform: translateY(-35%) rotate(-24deg);
+
+                        @include media-min(584px) {
+                            width: 300%;
+
+                            transform: translate(-20%, -35%) rotate(-24deg);
+                        }
+
+                        @include media-min(1024px) {
+                            font-size: $grup03;
+                            line-height: $grup05;
+                            letter-spacing: 1px;
+                        }
+                    }
+                }
+
+                & .bento-title--container {
+                    right: $grup;
+                    bottom: $grup-01;
+
+                    display: flex;
+                    flex-direction: column;
+                    gap: $grup-04;
+
+                    @include media-min(896px) {
+                        right: $grup02;
+                        bottom: $grup;
+                    }
+
+                    & > h2 {
+                        color: $chamoisee;
+
+                        & > span {
+                            padding: $grup-02 0;
+                        }
+                    }
+
+                    & > .bento-subtitles--container {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: flex-end;
+                        gap: $grup-04;
+
+                        & > h3 {
+                            width: fit-content;
+
+                            font-family: Raleway;
+                            font-size: $grup;
+                            font-weight: 800;
+                            font-style: italic;
+                            color: $vanDyke;
+                            text-transform: uppercase;
+                        }
+                    }
+                }
+            }
+
+            & .bento-title--container {
+                position: absolute;
+                z-index: 2;
+
+                & > h2,
+                & h2 > span {
+                    font-family: Raleway;
+                    font-size: $grup02;
+                    font-weight: 900;
+                    text-transform: uppercase;
+                }
+            }
+        }
+    }
+}

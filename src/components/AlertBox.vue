@@ -25,5 +25,5 @@ const closeAlert = inject<Function>("closeAlert");
 </template>
 
 <style>
-@import url("~/assets/stylesheets/css/alert.css");
+@import "@/assets/stylesheets/css/alert.css";
 </style>

@@ -57,7 +57,7 @@ const lastUpdate = config.public.NUXT_APP_LAST_UPDATE || "2003.06.04 - 00:00am";
                 </div>
                 <div class="footer-nav">
                     <ul>
-                        <NuxtLink to="/portfolio" class="footer-nav--link">
+                        <NuxtLink to="/" class="footer-nav--link">
                             <li>Portfolio</li>
                         </NuxtLink>
                     </ul>
@@ -83,5 +83,5 @@ const lastUpdate = config.public.NUXT_APP_LAST_UPDATE || "2003.06.04 - 00:00am";
 </template>
 
 <style>
-@import url("~/assets/stylesheets/css/footer.css");
+@import "@/assets/stylesheets/css/footer.css";
 </style>

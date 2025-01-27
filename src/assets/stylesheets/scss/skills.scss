@@ -1,0 +1,310 @@
+@import 'variables';
+@import 'animations';
+
+.skills {
+    position: relative;
+
+    background-color: $dutchWhite;
+
+    & canvas {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+
+        opacity: 0;
+
+        pointer-events: none;
+    }
+
+    .skills-container {
+        padding: $grup03 $grup02;
+
+        @include media-min(768px) {
+            padding: $grup05;
+        }
+
+        @include media-min(1024px) {
+            padding: $grup05 $grup07;
+        }
+
+        @include media-min(1536px) {
+            box-sizing: content-box;
+
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: $grup06 $grup08;
+        }
+
+        .skills-title--container {
+            display: flex;
+            flex-direction: column;
+            gap: $grup-02;
+
+            @include media-min(512px) {
+                flex-direction: unset;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .skills {
+                &-title {
+                    font-family: Raleway;
+                    font-size: $grup03;
+                    font-weight: 900;
+                    text-transform: uppercase;
+                    color: $vanDyke;
+
+                    @include media-min(768px) {
+                        font-size: $grup04;
+                    }
+
+                    @include media-min(1280px) {
+                        font-size: $grup06;
+                    }
+
+                    &--span {
+                        font-size: $grup-01;
+                        font-weight: 600;
+                        text-transform: none;
+                        color: $chamoisee;
+
+                        @include media-min(768px) {
+                            font-size: $grup;
+                        }
+
+                        @include media-min(1280px) {
+                            font-size: $grup;
+                        }
+
+                        & > span {
+                            font-family: Raleway;
+                            font-style: italic;
+                            font-weight: 800;
+                        }
+                    }
+                }
+            }
+        }
+
+        .skills {
+            &-banner {
+                position: relative;
+
+                margin: $grup02 0;
+
+                overflow-x: hidden;
+
+                @include media-min(768px) {
+                    margin: $grup03 0;
+                }
+
+                @include media-min(1024px) {
+                    margin: $grup04 0;
+                }
+
+                &::after {
+                    content: ' ';
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    left: 0;
+                    z-index: 2;
+
+                    background: linear-gradient(to right, $dutchWhite, transparent 20%, transparent 80%, $dutchWhite);
+                }
+
+                &--container {
+                    display: flex;
+                    gap: $grup02;
+
+                    min-width: fit-content;
+
+                    animation: skillsBanner 30s linear infinite;
+                }
+
+                &--item {
+                    display: flex;
+                    align-items: center;
+                    gap: $grup02;
+
+                    min-width: fit-content;
+
+                    font-size: $grup01;
+                    text-transform: uppercase;
+                    color: $chamoisee;
+
+                    @include media-min(1024px) {
+                        font-size: $grup02;
+                    }
+
+                    &::after {
+                        content: '';
+
+                        width: $grup-03;
+                        height: $grup-03;
+
+                        border-radius: 50%;
+                        background-color: $mauve;
+                    }
+                }
+            }
+
+            &-boxes--container {
+                display: flex;
+                flex-direction: column;
+                gap: $grup02;
+
+                @include media-min(640px) {
+                    display: grid;
+                    grid-template-columns: repeat(2, 1fr);
+                }
+
+                @include media-min(1280px) {
+                    gap: $grup04;
+                }
+
+                .skill-box {
+                    position: relative;
+
+                    padding: 1px;
+                    aspect-ratio: 3 / 2;
+
+                    border: 1px solid $vanDyke;
+                    border-radius: $grup;
+
+                    @include media-min(640px) {
+                        aspect-ratio: 2 / 3;
+                    }
+
+                    @include media-min(768px) {
+                        aspect-ratio: 4 / 3;
+                    }
+
+                    @include media-min(1024px) {
+                        aspect-ratio: 3 / 2;
+                    }
+
+                    @include media-min(1280px) {
+                        aspect-ratio: 5 / 3;
+                    }
+
+                    &--container {
+                        display: flex;
+                        gap: $grup;
+                    }
+
+                    &--grip {
+                        display: none;
+
+                        font-size: $grup02;
+                        color: $chamoisee;
+                    }
+
+                    &--content {
+                        width: 100%;
+                    }
+
+                    &--title {
+                        margin-bottom: $grup-03;
+
+                        font-family: Raleway;
+                        font-size: $grup01;
+                        font-weight: 900;
+                        font-style: italic;
+                        text-transform: capitalize;
+                        line-height: $grup02;
+                        color: $vanDyke;
+
+                        @include media-min(1024px) {
+                            font-size: $grup02;
+                        }
+                    }
+
+                    &--tag {
+                        position: absolute;
+                        display: flex;
+                        align-items: center;
+                        gap: $grup-02;
+
+                        display: none;
+
+                        width: fit-content;
+                        height: calc($grup03 + $grup-02);
+                        padding: $grup-03 $grup-01;
+
+                        border: 1.5px solid $vanDyke;
+                        border-radius: 100px;
+                        background-color: $cream;
+
+                        font-weight: 600;
+                        letter-spacing: 0.2px;
+
+                        user-select: none;
+                        pointer-events: none;
+
+                        @include media-min(1024px) {
+                            gap: $grup-01;
+
+                            padding: $grup-03 $grup-01;
+
+                            font-size: $grup01;
+                        }
+
+                        &.celadon {
+                            background-color: $celadon;
+                        }
+
+                        &.jordyBlue {
+                            background-color: $jordyBlue;
+                        }
+
+                        &.uranianBlue {
+                            background-color: $uranianBlue;
+                        }
+
+                        &.salmonPink {
+                            background-color: $salmonPink;
+                        }
+
+                        &.mauve {
+                            background-color: $mauve;
+                        }
+
+                        &.sunset {
+                            background-color: $sunset;
+                        }
+
+                        &.cream {
+                            background-color: $cream;
+                        }
+
+                        & .tag {
+                            &-icon {
+                                width: $grup02;
+                                height: $grup02;
+
+                                @include media-min(1024px) {
+                                    width: $grup03;
+                                    height: $grup03;
+                                }
+                            }
+                        }
+
+                        &.no-text {
+                            & > .tag-icon {
+                                height: $grup;
+                                width: auto;
+
+                                @include media-min(1024px) {
+                                    height: $grup01;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

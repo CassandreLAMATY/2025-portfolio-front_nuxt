@@ -1,0 +1,197 @@
+@import 'variables';
+
+.desc {
+    overflow: hidden;
+    position: relative;
+
+    background-color: $vanDyke;
+
+    &-grid {
+        // button have shadow 8px at the bottom so padding +8px
+        padding: $grup03 $grup02 calc($grup03 + $grup-02) $grup02;
+
+        @include media-min(768px) {
+            padding: $grup05;
+        }
+
+        @include media-min(1024px) {
+            box-sizing: content-box;
+
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            column-gap: $grup02;
+
+            width: 100%;
+            max-width: 1280px;
+            height: fit-content;
+            margin: 0 auto;
+            padding: $grup05 $grup07;
+        }
+
+        @include media-min(1536px) {
+            padding: $grup06 $grup08;
+        }
+    }
+
+    &-content {
+        position: relative;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        gap: $grup03;
+
+        @include media-min(768px) {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: $grup02;
+
+            align-items: center;
+        }
+
+        @include media-min(1024px) {
+            display: flex;
+            gap: $grup04;
+
+            grid-column: 1 / 9;
+        }
+
+        @include media-min(1536px) {
+            gap: $grup05;
+        }
+    }
+
+    &-text {
+        font-family: Quicksand;
+        font-weight: 300;
+        color: $seasalt;
+
+        @include media-min(768px) {
+            grid-column: 1 / 8;
+        }
+    }
+
+    &-btn {
+        &--container {
+            display: flex;
+            flex-direction: column;
+            gap: $grup02;
+
+            @include media-min(584px) {
+                display: grid;
+                grid-template-columns: repeat(12, 1fr);
+                gap: $grup02;
+            }
+
+            @include media-min(768px) {
+                display: flex;
+                justify-content: space-between;
+                gap: calc($grup03 + $grup-02);
+
+                grid-column: 9 / 13;
+
+                min-height: fit-content;
+                height: 100%;
+            }
+
+            @include media-min(1024px) {
+                display: grid;
+                grid-template-columns: repeat(6, 1fr);
+                column-gap: $grup05;
+
+                width: 100%;
+            }
+        }
+
+        &_left {
+            display: flex;
+            flex-direction: row;
+            gap: $grup03;
+
+            min-width: fit-content;
+            width: 100%;
+
+            & .btn {
+                min-width: fit-content;
+                width: 100%;
+            }
+
+            @include media-min(584px) {
+                grid-column: 1 / 10;
+            }
+
+            @include media-min(768px) {
+                display: flex;
+                flex-direction: column;
+            }
+
+            @include media-min(1024px) {
+                flex-direction: row;
+                grid-column: 1 / 5;
+            }
+        }
+    }
+
+    &-cv {
+        @include media-min(584px) {
+            grid-column: 10 / 13;
+        }
+
+        @include media-min(1024px) {
+            grid-column: 5 / 7;
+        }
+
+        .btn-shadow {
+            right: $grup-02;
+
+            @include media-min(512px) {
+                right: -$grup-02;
+            }
+
+            @include media-min(768px) {
+                right: $grup-02;
+            }
+
+            @include media-min(1024px) {
+                right: -$grup-02;
+            }
+        }
+
+        & .btn_secondary {
+            width: calc(100% / 2 - $grup);
+            margin-left: auto;
+
+            @include media-min(584px) {
+                min-width: fit-content;
+                width: 100%;
+            }
+
+            @include media-min(768px) {
+                margin-left: unset;
+
+                transform: translateY(-$grup-02);
+            }
+
+            @include media-min(1024px) {
+                transform: translateY(0);
+            }
+        }
+    }
+
+    &-logo {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+
+        width: fit-content;
+        height: 100%;
+        transform: scale(100%);
+
+        fill: #57423e;
+
+        @include media-min(512px) {
+            left: unset;
+            right: 0;
+        }
+    }
+}

@@ -59,5 +59,5 @@ watch(route, () => {
 </template>
 
 <style>
-@import url("~/assets/stylesheets/css/navbar.css");
+@import "@/assets/stylesheets/css/navbar.css";
 </style>

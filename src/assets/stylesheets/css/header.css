@@ -1,0 +1,498 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+/* HEADER */
+@keyframes sun-glow {
+  0% {
+    fill-opacity: 0.12;
+  }
+  50% {
+    fill-opacity: 0.24;
+  }
+  100% {
+    fill-opacity: 0.12;
+  }
+}
+@keyframes sun-spin {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+/* LOGO */
+@keyframes logo-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  70% {
+    transform: rotate(100deg);
+  }
+  80% {
+    transform: rotate(100deg);
+  }
+  98% {
+    transform: rotate(88deg);
+  }
+  100% {
+    transform: rotate(90deg);
+  }
+}
+@keyframes logo-spin_sun {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  70% {
+    transform: translate(-50%, -50%) rotate(100deg);
+  }
+  80% {
+    transform: translate(-50%, -50%) rotate(100deg);
+  }
+  98% {
+    transform: translate(-50%, -50%) rotate(88deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(90deg);
+  }
+}
+.logo-animation {
+  transition: transform 0.4s ease-in;
+}
+.logo-animation:hover {
+  cursor: pointer;
+  transform: rotate(90deg);
+  transition: transform 0.5s ease-out;
+  animation: logo-spin 0.5s;
+}
+.logo-animation:hover.sun-logo {
+  transform: translate(-50%, -50%) rotate(90deg);
+  animation: logo-spin_sun 0.5s;
+}
+.logo-animation:hover #hyphen {
+  transform: translateX(8px);
+}
+.logo-animation:hover #bracket {
+  transform: translateX(14px);
+}
+.logo-animation:hover #Bbumps {
+  transform: translateX(-9px);
+}
+.logo-animation:hover #Bbar {
+  transform: translateX(-5.5px);
+}
+.logo-animation #hyphen,
+.logo-animation #bracket,
+.logo-animation #Bbumps,
+.logo-animation #Bbar {
+  transition: transform 0.4s;
+}
+@keyframes skillsBanner {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+header {
+  position: relative;
+}
+header .curves {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  background-image: url("@/assets/images/svg/Curves01.svg");
+  background-position-x: 59%;
+  background-position-y: 29%;
+  pointer-events: none;
+}
+@media (min-width: 512px) {
+  header .curves {
+    background-position-y: 27%;
+  }
+}
+
+.bg {
+  position: relative;
+  height: max(25dvh, 196px);
+  background: linear-gradient(90deg, #93beff, #b3a7ff);
+  overflow: hidden;
+}
+.bg::after {
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  content: " ";
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: #533f3b;
+}
+@media (min-width: 768px) {
+  .bg {
+    height: max(30dvh, 196px);
+  }
+}
+@media (min-width: 1024px) {
+  .bg {
+    height: max(40dvh, 256px);
+  }
+}
+
+.sun-container {
+  position: absolute;
+  transform: translate(calc(-32.5% + 2rem), calc(-32.5% + 16px));
+  width: min(384px, 80%);
+  aspect-ratio: 1;
+}
+.sun-container .sun {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.sun-container .sun-aura {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  outline: 1px #f4e4ba solid;
+}
+.sun-container .sun-aura#aura01 {
+  width: 100%;
+  height: 100%;
+}
+.sun-container .sun-aura#aura02 {
+  width: 65%;
+  height: 65%;
+}
+.sun-container .sun-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40%;
+  height: 40%;
+  fill: #f4e4ba;
+  fill-opacity: 0.12;
+  animation: sun-glow 2s infinite ease-out;
+}
+@media (min-width: 1536px) {
+  .sun-container .sun-glow {
+    height: 35%;
+    width: 35%;
+  }
+}
+.sun-container .sun-sphere {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #f4e4ba;
+  border-radius: 50%;
+  height: 35%;
+  width: 35%;
+  transition: transform 0.2s ease-in-out;
+}
+.sun-container .sun-sphere:hover {
+  transform: translate(-50%, -50%) scale(1.04);
+}
+.sun-container .sun-sphere:hover .sun-logo {
+  transform: translate(-50%, -50%) rotate(90deg);
+  animation: logo-spin_sun 0.5s;
+}
+.sun-container .sun-sphere:hover .sun-logo #hyphen {
+  transform: translateX(8px);
+}
+.sun-container .sun-sphere:hover .sun-logo #bracket {
+  transform: translateX(14px);
+}
+.sun-container .sun-sphere:hover .sun-logo #Bbumps {
+  transform: translateX(-9px);
+}
+.sun-container .sun-sphere:hover .sun-logo #Bbar {
+  transform: translateX(-5.5px);
+}
+@media (min-width: 1536px) {
+  .sun-container .sun-sphere {
+    height: 30%;
+    width: 30%;
+  }
+}
+.sun-container .sun-logo--container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.sun-container .sun-logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 65%;
+  height: 65%;
+  fill: #99715b;
+  transition: transform 0.2s ease-in;
+}
+.sun-container .sun-logo #hyphen,
+.sun-container .sun-logo #bracket,
+.sun-container .sun-logo #Bbumps,
+.sun-container .sun-logo #Bbar {
+  transition: transform 0.4s;
+}
+@media (min-width: 450px) {
+  .sun-container {
+    transform: translate(calc(-32.5% + 3rem), calc(-32.5% + 1.5rem));
+  }
+}
+@media (min-width: 512px) {
+  .sun-container {
+    transform: translate(calc(-32.5% + 3rem + 1.5rem), calc(-32.5% + 2rem));
+  }
+}
+@media (min-width: 768px) {
+  .sun-container {
+    width: min(512px, 80%);
+    transform: translateX(calc(-32.5% + 3rem + 3rem), calc(-32.5% + 2rem));
+  }
+}
+@media (min-width: 1024px) {
+  .sun-container {
+    transform: translate(calc(-32.5% + 3rem + 8rem), calc(-32.5% + 4rem));
+  }
+}
+@media (min-width: 1536px) {
+  .sun-container {
+    width: min(768px, 80%);
+    transform: translate(calc(-32.5% + 3rem + 8rem), calc(-32.5% + 2rem));
+  }
+}
+
+.bg-mountains {
+  position: absolute;
+}
+.bg-mountains #bgmountain01 {
+  left: 64px;
+}
+.bg-mountains #bgmountain02 {
+  left: 200px;
+}
+
+.mountains {
+  display: flex;
+  min-width: fit-content;
+  width: 100%;
+  height: max(25dvh, 196px);
+  pointer-events: none;
+}
+.mountains-container {
+  position: relative;
+  display: block;
+  width: 100%;
+  max-width: 768px;
+}
+@media (min-width: 768px) {
+  .mountains-container {
+    min-width: 768px;
+  }
+}
+@media (min-width: 1024px) {
+  .mountains-container {
+    min-width: 1024px;
+  }
+}
+.mountains .mountain {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  height: 100%;
+  fill: #443433;
+}
+.mountains .mountain#mountain01 {
+  display: inline-block;
+  right: -24px;
+}
+.mountains .mountain#mountain02 {
+  right: 15%;
+}
+.mountains .mountain#mountain03 {
+  right: 30%;
+}
+@media (min-width: 1024px) {
+  .mountains .mountain#mountain03 {
+    right: 29%;
+  }
+}
+.mountains .mountain#mountain04 {
+  left: 0;
+}
+.mountains #mountain01-body {
+  display: none;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, #443433 0%, #533f3b 100%);
+}
+@media (min-width: 1280px) {
+  .mountains #mountain01-body::after {
+    box-sizing: border-box;
+    content: " ";
+    display: block;
+    width: calc(100% - 1.5rem);
+    height: calc(100% - 1.5rem);
+    margin: 1.5rem 1.5rem 0 0;
+    background-image: url("@/assets/images/svg/HeaderStars.svg");
+    background-repeat: repeat-x;
+    mask-image: linear-gradient(to right, rgba(0, 0, 0, 0) 9%, black 98%, rgba(0, 0, 0, 0) 100%);
+    background-size: initial;
+    background-position: right -50%;
+  }
+}
+@media (min-width: 1536px) {
+  .mountains #mountain01-body::after {
+    mask-image: linear-gradient(to right, rgba(0, 0, 0, 0) 2%, black 99%, rgba(0, 0, 0, 0) 100%);
+    background-position: unset;
+    background-position-x: right;
+  }
+}
+@media (min-width: 768px) {
+  .mountains #mountain01-body {
+    display: block;
+  }
+}
+@media (min-width: 768px) {
+  .mountains {
+    height: max(30dvh, 196px);
+  }
+}
+@media (min-width: 1024px) {
+  .mountains {
+    height: max(40dvh, 256px);
+  }
+}
+
+.stars {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  z-index: 10;
+}
+
+.me {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: fit-content;
+  height: fit-content;
+  padding: 0 1.5rem;
+  transform: translateY(-1.5rem);
+}
+.me-overline {
+  font-size: 0.75rem;
+  font-weight: 300;
+  color: #f9f9f9;
+  text-transform: uppercase;
+}
+@media (min-width: 768px) {
+  .me-overline {
+    font-size: 16px;
+  }
+}
+@media (min-width: 1024px) {
+  .me-overline {
+    font-size: 1.25rem;
+  }
+}
+.me-name {
+  display: block;
+  width: fit-content;
+  margin-left: 0;
+  font-family: Raleway;
+  font-weight: 900;
+  font-size: 2rem;
+  color: #ffe3e0;
+  text-align: right;
+  text-transform: uppercase;
+}
+.me-name#firstname {
+  margin: 0 1.5rem 0 auto;
+}
+.me-name#name {
+  margin-left: auto;
+  color: #f9f9f9;
+  font-style: italic;
+}
+@media (min-width: 512px) {
+  .me-name {
+    font-size: 3rem;
+  }
+}
+@media (min-width: 768px) {
+  .me-name {
+    font-size: 4rem;
+  }
+}
+@media (min-width: 1280px) {
+  .me-name {
+    font-size: 6rem;
+  }
+}
+@media (min-width: 512px) {
+  .me {
+    padding: 1.5rem 2rem 0 2rem;
+    transform: translateY(0);
+  }
+}
+@media (min-width: 768px) {
+  .me {
+    padding: 2rem 4rem 4rem 4rem;
+  }
+}
+@media (min-width: 1024px) {
+  .me {
+    padding: 0 8rem 4rem 8rem;
+  }
+}
+@media (min-width: 1280px) {
+  .me {
+    grid-column: -1;
+    padding: 0 0 6rem 0;
+  }
+}
+.me-container {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  background: linear-gradient(#533f3b, #644b44);
+}
+@media (min-width: 1280px) {
+  .me-grid {
+    box-sizing: content-box;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: 1.5rem;
+    width: 100%;
+    max-width: 1280px;
+    height: fit-content;
+    margin: 0 auto;
+    padding: 0 8rem;
+  }
+}
+@media (min-width: 1536px) {
+  .me-grid {
+    padding: 0 16rem;
+  }
+}
+@media (min-width: 2048px) {
+  .me-grid {
+    padding: 0;
+  }
+}
+
+/*# sourceMappingURL=header.css.map */
