@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import { nextTick, ref, watch } from "vue";
+import { isClient } from "@vueuse/core";
 
-getSkillTags();
+const { data: tags } = useAsyncData(() => getSkillTags());
 
 const _section = ref<HTMLElement | null>(null);
 const _boxes = ref<NodeListOf<HTMLElement> | null>(null);
@@ -10,6 +11,8 @@ const _tags = ref<NodeListOf<HTMLElement> | null>(null);
 watch(
     () => tags.value,
     async () => {
+        if (!isClient) return;
+
         await nextTick();
 
         _section.value = document.querySelector(
@@ -23,7 +26,8 @@ watch(
             initMatter(_section.value, _boxes.value);
             watchResize(_section.value, _boxes.value, _tags.value);
         }
-    }
+    },
+    { immediate: true }
 );
 </script>
 

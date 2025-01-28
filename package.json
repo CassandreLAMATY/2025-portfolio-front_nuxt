@@ -19,6 +19,7 @@
     "@fortawesome/pro-regular-svg-icons": "^6.7.2",
     "@fortawesome/pro-solid-svg-icons": "^6.7.2",
     "@fortawesome/vue-fontawesome": "^3.0.8",
+    "@vueuse/core": "^12.5.0",
     "gsap": "^3.12.7",
     "matter-js": "^0.20.0",
     "nuxt": "^3.15.3",

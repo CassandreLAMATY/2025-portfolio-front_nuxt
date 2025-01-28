@@ -19,6 +19,7 @@ export default defineNuxtConfig({
             NUXT_APP_VERSION: process.env.NUXT_APP_VERSION,
             NUXT_APP_LAST_UPDATE: process.env.NUXT_APP_LAST_UPDATE,
             STRAPI_API_URL: process.env.NUXT_PUBLIC_STRAPI_API_URL,
+            STRAPI_URL: process.env.NUXT_PUBLIC_STRAPI_URL,
             STRAPI_API_TOKEN: process.env.NUXT_PUBLIC_STRAPI_API_TOKEN,
         },
     },

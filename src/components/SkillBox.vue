@@ -8,7 +8,7 @@ const props = defineProps<{
     index: number;
 }>();
 
-const apiUrl = import.meta.env.VITE_STRAPI_URL;
+const apiUrl = useRuntimeConfig().public.STRAPI_URL;
 
 onMounted(async () => {
     const section = document.querySelector(".skills") as HTMLElement | null;
