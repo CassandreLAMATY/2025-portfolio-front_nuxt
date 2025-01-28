@@ -3,7 +3,6 @@ export default defineNuxtConfig({
     compatibilityDate: "2024-11-01",
     devtools: { enabled: true },
     srcDir: "src",
-    rootDir: "./",
     components: [
         { path: "blocks", extensions: ["vue"] },
         { path: "blocks/home", extensions: ["vue"] },
@@ -21,6 +20,17 @@ export default defineNuxtConfig({
             STRAPI_API_URL: process.env.NUXT_PUBLIC_STRAPI_API_URL,
             STRAPI_URL: process.env.NUXT_PUBLIC_STRAPI_URL,
             STRAPI_API_TOKEN: process.env.NUXT_PUBLIC_STRAPI_API_TOKEN,
+        },
+    },
+    app: {
+        head: {
+            link: [
+                {
+                    rel: "icon",
+                    type: "image/x-icon",
+                    href: "/favicon.ico",
+                },
+            ],
         },
     },
 });
