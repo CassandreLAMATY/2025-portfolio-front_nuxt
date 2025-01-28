@@ -3,5 +3,5 @@
     <DescriptionBlock />
     <BentoBlock />
     <SkillsBlock />
-    <!-- <ContactBlock /> -->
+    <ContactBlock />
 </template>
