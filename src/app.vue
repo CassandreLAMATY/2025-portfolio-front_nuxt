@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { onMounted } from "vue";
-import { RouterView } from "vue-router";
 
 import { Alert } from "~/entities/Alert";
 import { useAlerts } from "~/composables/useAlerts";
@@ -8,8 +7,12 @@ const { alerts, watchAlerts, addAlert, closeAlert } = useAlerts();
 
 provide("closeAlert", closeAlert);
 
+const isLoading = ref(true);
+
 onMounted(async () => {
     watchAlerts();
+
+    isLoading.value = false;
 
     addAlert(
         new Alert(
@@ -39,4 +42,6 @@ onMounted(async () => {
     </div>
 
     <Footer />
+
+    <PageLoader v-if="isLoading" />
 </template>
