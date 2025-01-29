@@ -43,5 +43,5 @@ onMounted(async () => {
 
     <Footer />
 
-    <PageLoader />
+    <PageLoader v-if="isLoading" />
 </template>
