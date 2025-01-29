@@ -17,9 +17,6 @@ useSeoMeta({
     twitterTitle: "LC // Portfolio .",
     twitterDescription:
         "Helloo ! I'm Cassandre Lamaty, a French full-stack web developer. Feel free to explore my projects and discover my skills in web development, graphic design, and much more !",
-    twitterUrl: "https://lamatycassandre.me",
-
-    canonical: "https://lamatycassandre.me",
 });
 </script>
 
